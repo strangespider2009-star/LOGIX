@@ -35,3 +35,7 @@ test("reject missing face result", () => {
   assert.equal(check({ faceMatched: undefined }).accessGranted, false);
 });
 
+test("reject string claiming a face match", () => {
+  assert.equal(check({ faceMatched: 'true' }).accessGranted, false);
+});
+
