@@ -71,3 +71,7 @@ test("reject string approval flag", () => {
   assert.equal(check({ driver: { ...driver, approved: 'true' } }).accessGranted, false);
 });
 
+test("reject expired licence date", () => {
+  assert.equal(check({ driver: { ...driver, licenceExpiry: '2026-11-14' } }).accessGranted, false);
+});
+
