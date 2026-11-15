@@ -31,3 +31,7 @@ test("reject explicit face mismatch", () => {
   assert.equal(check({ faceMatched: false }).accessGranted, false);
 });
 
+test("reject missing face result", () => {
+  assert.equal(check({ faceMatched: undefined }).accessGranted, false);
+});
+
