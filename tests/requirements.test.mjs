@@ -51,3 +51,7 @@ test("reject missing fingerprint result", () => {
   assert.equal(check({ fingerprintMatched: undefined }).accessGranted, false);
 });
 
+test("reject string claiming a fingerprint match", () => {
+  assert.equal(check({ fingerprintMatched: 'true' }).accessGranted, false);
+});
+
