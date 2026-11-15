@@ -43,3 +43,7 @@ test("reject numeric face match flag", () => {
   assert.equal(check({ faceMatched: 1 }).accessGranted, false);
 });
 
+test("reject explicit fingerprint mismatch", () => {
+  assert.equal(check({ fingerprintMatched: false }).accessGranted, false);
+});
+
