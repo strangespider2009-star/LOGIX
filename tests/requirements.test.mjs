@@ -63,3 +63,7 @@ test("reject string enrollment flag", () => {
   assert.equal(check({ driver: { ...driver, fingerprintEnrolled: 'true' } }).accessGranted, false);
 });
 
+test("reject owner disapproval", () => {
+  assert.equal(check({ driver: { ...driver, approved: false } }).accessGranted, false);
+});
+
