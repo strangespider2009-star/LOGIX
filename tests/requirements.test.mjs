@@ -39,3 +39,7 @@ test("reject string claiming a face match", () => {
   assert.equal(check({ faceMatched: 'true' }).accessGranted, false);
 });
 
+test("reject numeric face match flag", () => {
+  assert.equal(check({ faceMatched: 1 }).accessGranted, false);
+});
+
