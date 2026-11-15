@@ -87,3 +87,7 @@ test("accept leap year February 29", () => {
   assert.equal(validDate('2028-02-29'), true);
 });
 
+test("reject non ISO date format", () => {
+  assert.equal(validDate('11/15/2026'), false);
+});
+
