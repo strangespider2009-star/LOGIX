@@ -95,3 +95,7 @@ test("accept fingerprint sensor slots at boundaries", () => {
   assert.equal(validSlot(1), true); assert.equal(validSlot(127), true);
 });
 
+test("reject fractional fingerprint slot", () => {
+  assert.equal(validSlot(3.5), false);
+});
+
