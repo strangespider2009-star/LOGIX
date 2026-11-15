@@ -27,3 +27,7 @@ test("reject driver linked to a different vehicle", () => {
   assert.equal(check({ driver: { ...driver, vehicleId: 'vehicle-2' } }).accessGranted, false);
 });
 
+test("reject explicit face mismatch", () => {
+  assert.equal(check({ faceMatched: false }).accessGranted, false);
+});
+
