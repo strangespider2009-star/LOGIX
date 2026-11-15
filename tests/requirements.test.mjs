@@ -67,3 +67,7 @@ test("reject owner disapproval", () => {
   assert.equal(check({ driver: { ...driver, approved: false } }).accessGranted, false);
 });
 
+test("reject string approval flag", () => {
+  assert.equal(check({ driver: { ...driver, approved: 'true' } }).accessGranted, false);
+});
+
