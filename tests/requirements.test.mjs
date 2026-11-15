@@ -11,3 +11,7 @@ test("approve only when all demo conditions pass", () => {
   assert.equal(check().accessGranted, true);
 });
 
+test("reject absent driver", () => {
+  assert.equal(check({ driver: null }).accessGranted, false);
+});
+
