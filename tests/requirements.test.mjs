@@ -99,3 +99,7 @@ test("reject fractional fingerprint slot", () => {
   assert.equal(validSlot(3.5), false);
 });
 
+test("reject string fingerprint slot", () => {
+  assert.equal(validSlot('3'), false);
+});
+
