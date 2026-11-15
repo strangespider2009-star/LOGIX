@@ -59,3 +59,7 @@ test("reject fingerprint not enrolled", () => {
   assert.equal(check({ driver: { ...driver, fingerprintEnrolled: false } }).accessGranted, false);
 });
 
+test("reject string enrollment flag", () => {
+  assert.equal(check({ driver: { ...driver, fingerprintEnrolled: 'true' } }).accessGranted, false);
+});
+
