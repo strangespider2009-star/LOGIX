@@ -23,3 +23,7 @@ test("reject driver without linked vehicle", () => {
   assert.equal(check({ driver: { ...driver, vehicleId: '' } }).accessGranted, false);
 });
 
+test("reject driver linked to a different vehicle", () => {
+  assert.equal(check({ driver: { ...driver, vehicleId: 'vehicle-2' } }).accessGranted, false);
+});
+
