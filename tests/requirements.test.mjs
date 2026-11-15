@@ -83,3 +83,7 @@ test("reject nonexistent February 29", () => {
   assert.equal(validDate('2026-02-29'), false);
 });
 
+test("accept leap year February 29", () => {
+  assert.equal(validDate('2028-02-29'), true);
+});
+
