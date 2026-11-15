@@ -91,3 +91,7 @@ test("reject non ISO date format", () => {
   assert.equal(validDate('11/15/2026'), false);
 });
 
+test("accept fingerprint sensor slots at boundaries", () => {
+  assert.equal(validSlot(1), true); assert.equal(validSlot(127), true);
+});
+
