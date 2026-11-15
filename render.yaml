@@ -1,0 +1,15 @@
+# Render Blueprint for the LOGIX educational LED-only demo.
+# Deploy as a single Web Service so the React site and /api share one origin.
+services:
+  - type: web
+    name: logix
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run check && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
