@@ -15,3 +15,7 @@ test("reject absent driver", () => {
   assert.equal(check({ driver: null }).accessGranted, false);
 });
 
+test("reject absent vehicle", () => {
+  assert.equal(check({ vehicle: null }).accessGranted, false);
+});
+
