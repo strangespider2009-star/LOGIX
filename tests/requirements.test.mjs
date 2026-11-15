@@ -103,3 +103,7 @@ test("reject string fingerprint slot", () => {
   assert.equal(validSlot('3'), false);
 });
 
+test("return boolean checks for successful result", () => {
+  assert.equal(Object.values(check().checks).every(x => x === true), true); assert.equal(Object.keys(check().checks).length, 5);
+});
+
