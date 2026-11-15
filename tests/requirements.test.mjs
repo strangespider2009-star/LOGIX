@@ -47,3 +47,7 @@ test("reject explicit fingerprint mismatch", () => {
   assert.equal(check({ fingerprintMatched: false }).accessGranted, false);
 });
 
+test("reject missing fingerprint result", () => {
+  assert.equal(check({ fingerprintMatched: undefined }).accessGranted, false);
+});
+
