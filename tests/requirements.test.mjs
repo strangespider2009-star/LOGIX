@@ -75,3 +75,7 @@ test("reject expired licence date", () => {
   assert.equal(check({ driver: { ...driver, licenceExpiry: '2026-11-14' } }).accessGranted, false);
 });
 
+test("accept expiry date on evaluation day", () => {
+  assert.equal(check({ driver: { ...driver, licenceExpiry: '2026-11-15' } }).accessGranted, true);
+});
+
